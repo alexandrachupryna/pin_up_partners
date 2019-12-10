@@ -1,0 +1,15 @@
+=r($screen)
+  @media all and (max-width: $screen+'px')
+    @content
+
+=mr($screen)
+  @media all and (min-width: $screen+'px')
+    @content
+
+=b($screen)
+  @media all and (max-height: $screen+'px')
+    @content
+
+=bt($screen1, $screen2)
+  @media (max-width: $screen1+'px') and (min-width: $screen2+'px')
+    @content

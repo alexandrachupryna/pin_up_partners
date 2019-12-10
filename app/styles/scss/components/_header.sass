@@ -1,0 +1,146 @@
+$grey: #2B2B2B
+$white: #FFFFFF
+$lightgrey: #5C5C5C
+$red: #E03D22
+$whitesmoke: #F3F3F3
+$black: #1A1A1A
+$midgrey: #878787
+$screen_width: 100vw
+$screen_height: 100vh
+
+body
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    display: grid
+    grid-template-rows: 137px 1fr
+    grid-template-columns: 240px 1fr
+    grid-template-areas: "header header" "aside content"
+    max-height: 100vh
+    font-family: 'Open Sans', sans-serif
+    +r(1023)
+        display: block
+header
+    grid-area: header
+    background: $grey
+    color: $white
+    h1
+        font-size: 20px
+        line-height: 27px
+        text-align: center
+        text-transform: uppercase
+    .header, .info
+        display: flex
+        +r(767)
+            display: none
+    .header_logo
+        min-width: 240px
+    .header
+        height: 60px
+        border-bottom: 1px solid $lightgrey
+    .header_logo
+        @extend .center
+    .h1_block
+        @extend .center
+        width: 100%
+        position: relative
+    .border-bottom
+        position: absolute
+        border-bottom: 4px solid $red
+        width: 98%
+        bottom: 0
+    .vertical_line
+        width: 1px
+        height: 28px
+        background: $lightgrey
+    .user_icon
+        img
+            display: block
+    .menu-btn
+        display: none
+        +r(1023)
+            display: block
+            display: inline
+            cursor: pointer
+    .info
+        height: 75px
+        &_account
+            min-width: 240px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            padding: 10px 8px
+            border-bottom: 1px solid $lightgrey
+            border-right: 1px solid $lightgrey
+            &_user
+                @extend .center-sb
+            &_founds
+                font-size: 24px
+                line-height: 33px
+        &_general
+            @extend .center-sb
+            width: 100%
+            text-align: center
+            &_item
+                @extend .center
+                width: 20%
+                box-sizing: border-box
+                height: 100%
+                padding: 10px
+                flex-direction: column
+                position: relative
+                +r(767)
+                    width: 100%
+                    background: $grey
+                    color: $white
+                    padding-left: 45px
+                    border-bottom: 1px solid $lightgrey
+                img
+                    position: absolute
+                    left: 22px
+                    +r(1599)
+                        left: 10px
+                    +r(1349)
+                        left: 6px
+                        width: 25px
+                    +r(1199)
+                        left: 0px
+                        width: 20px
+                    +r(1023)
+                        width: 16px
+                    +r(767)
+                        left: 6px
+                        max-width: 25px
+                &:not(:last-child)
+                    border-right: 1px solid $lightgrey
+                &_number
+                    font-size: 24px
+                    +r(1599)
+                        font-size: 16px
+                    +r(1023)
+                        font-size: 12px
+                &_text
+                    +r(1599)
+                        font-size: 12px
+                    +r(1023)
+                        font-size: 10px
+                    +r(767)
+                        text-align: left
+                        width: 100%
+    .header_mobile
+        +r(767)
+            display: flex
+            justify-content: space-between
+            height: 45px
+            align-items: center
+            padding: 5px
+            border-bottom: 1px solid $lightgrey
+            button
+                width: 35px
+                height: 35px
+                border: 2px solid red
+                background: transparent
+                display: inline-flex
+                align-items: center
+                justify-content: center
+                border-radius: 3px

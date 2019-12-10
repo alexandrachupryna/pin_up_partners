@@ -1,0 +1,300 @@
+main
+    grid-area: content
+    background: $whitesmoke
+    width: calc(#{$screen_width} - 240px)
+    height: calc(#{$screen_height} - 137px)
+    overflow-x: hidden
+    +r(1023)
+        width: 100%
+    +r(767)
+        min-height: calc(#{$screen_height} - 45px)
+.banner
+    max-width: 100%
+    +r(1023)
+        display: none
+    +b(699)
+        display: none
+    img
+        max-width: 100%
+        width: 100%
+        display: block
+.content
+    max-width: calc(#{$screen_width} - 240px)
+    display: flex
+    +r(1023)
+        width: 100%
+        max-width: 100%
+    +r(767)
+        display: block
+    .nice-select
+        +r(1199)
+            width: 110px
+            font-size: 12px
+            padding-left: 8px
+        +r(767)
+            font-size: 10px
+            width: 90px
+            padding-left: 5px
+            margin-right: 5px
+    .chart_period_item:first-child
+        +r(767)
+            display: none
+    input[type="date"]
+        +r(1199)
+            width: 96px
+        +r(767)
+            width: 51px
+            font-size: 9px
+.aside-right
+    width: 349px
+    +bt(1199, 1024)
+        width: 280px
+    +r(1023)
+        width: auto
+.chart
+    padding: 15px 12px
+    width: calc(#{$screen_width} - 589px)
+    +bt(1199, 1024)
+        width: calc(100vw - 547px)
+    +r(1023)
+        width: calc(#{$screen_width} - 338px)
+        max-width: 100%
+        font-size: 12px
+    +r(767)
+        padding: 15px 0
+        width: 100%
+    &_panel
+        @extend .center-sb
+        background: $grey
+        border-radius: 3px
+        height: 40px
+        padding: 0 0 0 8px
+        box-sizing: border-box
+    &_period
+        color: $white
+        display: flex
+        align-items: center
+        height: 100%
+        &_item
+            margin-right: 5px
+            +r(1199)
+                margin-right: 5px
+                font-size: 12px
+            &:first-child
+                +r(1349)
+                    display: none
+        &_btn
+            padding: 0 8px
+            height: 100%
+            display: flex
+            align-items: center
+            color: $lightgrey
+            position: relative
+            transition: all 0.5s ease-out
+            +r(1349)
+                display: none
+            &.active_period
+                background: $black
+                color: $white
+                .red_horizontal_line
+                    opacity: 1
+            &:not(:last-child)
+                border-right: 1px solid grey
+            &:hover
+                background: $black
+                cursor: pointer
+    .period-select
+        display: none
+        +r(1349)
+            display: block
+        .nice-select
+            +r(1349)
+                width: 65px
+.nav_user
+    display: none
+#myChart
+    height: 100%
+.red_horizontal_line
+    background: $red
+    height: 5px
+    width: 100%
+    position: absolute
+    bottom: 0
+    right: 0
+    opacity: 0
+.news
+    padding: 15px 12px
+    +r(767)
+        padding: 0 12px
+    &_header
+        background: $grey
+        border-radius: 3px
+        color: $white
+        height: 40px
+        display: flex
+        padding: 8px
+        box-sizing: border-box
+        justify-content: space-between
+        margin-bottom: 10px
+        position: relative
+        +bt(1199, 1024)
+            font-size: 14px
+        +r(767)
+            font-size: 14px
+            width: $screen_width
+            margin-left: -12px
+        &_last
+            display: flex
+            img
+                margin-right: 8px
+        &_line
+            background: $red
+            border-radius: 0px 0px 3px 3px
+            height: 5px
+            width: 100%
+            position: absolute
+            bottom: 0
+            right: 0
+        h4
+            margin: 0
+        a
+            color: $white
+    article
+        background: linear-gradient(180deg, #FFFFFF 0%, #CDCDCD 100%)
+        border-radius: 3px
+        height: 33.3%
+        margin-bottom: 5px
+        padding: 10px 15px
+        box-sizing: border-box
+        position: relative
+        +r(1599)
+            font-size: 12px
+        .article
+            &_data
+                color: $midgrey
+            &_close
+                position: absolute
+                top: 8px
+                right: 8px
+        h5
+            margin: 15px 0
+            font-size: 16px
+            text-decoration: underline
+            +r(1599)
+                font-size: 14px
+        a
+            font-size: 12px
+            color: #000000
+            text-align: right
+            display: block
+            +r(1599)
+                font-size: 10px
+.social
+    padding: 15px 12px
+    h4
+        margin-top: 0
+        margin-bottom: 22px
+    &_block
+        display: flex
+        justify-content: space-between
+        +r(1349)
+            width: 70%
+        +r(1023)
+            width: 100%
+        &_item
+            @extend .center
+            width: 41px
+            height: 41px
+            background: linear-gradient(180deg, #FFFFFF 0%, #CDCDCD 100%)
+            border-radius: 4px
+            position: relative
+            &:hover
+                .active_link
+                    opacity: 1
+    .active_link
+        transition: all 0.5s ease-out
+        width: 100%
+        height: 4px
+        background: $red
+        border-radius: 0px 0px 10px 10px
+        position: absolute
+        bottom: 0
+        opacity: 0
+.statistics, .head_info, .info-btn, .header_mobile
+    display: none
+.statistics
+    +r(767)
+        display: block
+        background: $grey
+        color: $white
+        font-weight: bold
+        text-transform: uppercase
+        text-align: center
+        padding: 8px 0
+        border-bottom: 3px solid $red
+.info-btn
+    +r(767)
+        height: 14px
+        width: 28px
+        border-radius: 0 0 50% 50% / 0 0 100% 100%
+        background: $grey
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 0 auto
+.rotateBtn
+    transform: rotate(180deg)
+.nav_user
+    +r(767)
+        position: absolute
+        z-index: 1
+        width: 100%
+        color: $white
+        background: $grey
+        padding: 0
+        margin: 0
+        ul
+            list-style-type: none
+            padding: 0
+        a
+            color: $white
+            text-decoration: none
+        .nav_item
+            display: flex
+            padding: 8px
+            align-items: center
+            &:hover
+                background: $black
+        .info
+            &_account
+                padding: 10px
+                border-bottom: 1px solid $lightgrey
+                &_founds
+                    text-align: right
+                &_user
+                    display: flex
+                    justify-content: space-between
+                    padding-bottom: 10px
+        .li_img
+            width: 48px
+            height: 48px
+            align-items: center
+            display: flex
+            justify-content: center
+        .manager
+            text-align: center
+        .referral_funds
+            display: flex
+            justify-content: space-around
+.head_info
+    background: $grey
+    color: $white
+    .info_general_item
+        +r(767)
+            display: flex
+            padding: 10px 6px 16px 50px
+            align-items: center
+        img
+            position: absolute
+            left: 6px
+            max-width: 25px
